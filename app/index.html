@@ -11,13 +11,45 @@
 
     <link rel="stylesheet" href="bower/normalize.css/normalize.css">
     <link rel="stylesheet" href="bower/angular/angular.min.js">
-    <link rel="stylesheet" href="pub/css/main.css">
+    <link rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.css"></script>    <link rel="stylesheet" href="pub/css/main.css">
 
     <script src="bower/angular/angular.js"></script>
   </head>
   <body>
-    <p>Nothing here {{'yet' + '!'}}</p>
 
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="">Default</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Navbar example</h1>
+        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+      </div>
+    </div>
+
+    <script src="bower/jquery/dist/jquery.min.js"></script>
+    <script src="bower/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="pub/js/main.js"></script>
 
   </body>
