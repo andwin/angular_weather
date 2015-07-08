@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="" ng-app>
+<html lang="" ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -11,7 +11,8 @@
 
     <link rel="stylesheet" href="bower/normalize.css/normalize.css">
     <link rel="stylesheet" href="bower/angular/angular.min.js">
-    <link rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.css"></script>    <link rel="stylesheet" href="pub/css/main.css">
+    <link rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.css"></script>
+    <link rel="stylesheet" href="pub/css/main.css">
 
     <script src="bower/angular/angular.js"></script>
   </head>
@@ -42,15 +43,23 @@
     </nav>
 
     <div class="container">
-      <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+    <div class="row">
+      <div class="col-md-4">
+        <city-list></city-list>       
+      </div>
+      <div class="col-md-8">
+        <div class="jumbotron">
+          <h1>Navbar example</h1>
+          <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+        </div>
       </div>
     </div>
-
+      
     <script src="bower/jquery/dist/jquery.min.js"></script>
     <script src="bower/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="pub/js/main.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/directives/city_list.js"></script>
 
   </body>
 </html>
