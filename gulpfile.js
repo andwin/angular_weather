@@ -1,8 +1,19 @@
 'use strict';
 
 var gulp = require('gulp'),
-  connect = require('gulp-connect');
- 
+    connect = require('gulp-connect'),
+    sass = require('gulp-sass');
+
+gulp.task('sass', function () {
+  gulp.src('./app/scss/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./app/css'));
+});
+
+gulp.task('sass:watch', function () {
+  gulp.watch(['./app/scss/**/*.scss'], ['sass', 'html']);
+});
+
 gulp.task('connect', function() {
   connect.server({
     root: 'app',
@@ -16,8 +27,8 @@ gulp.task('html', function () {
     .pipe(connect.reload());
 });
  
-gulp.task('watch', function () {
+gulp.task('html:watch', function () {
   gulp.watch(['./app/*.html'], ['html']);
 });
  
-gulp.task('default', ['connect', 'watch']);
+gulp.task('default', ['sass', 'sass:watch', 'connect', 'html:watch']);
