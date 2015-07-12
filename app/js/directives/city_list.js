@@ -1,5 +1,11 @@
-app.directive('cityList', function() {
+angular.module("myApp", []).directive('cityList', function() {
+
+
+//app.directive('cityList', function() {
   return {
-    template: '<h1>hej</h1>'
+    restrict: "E",
+    transclude: true,
+    replace: true,
+    templateUrl: 'views/directives/city_list.html'
   };
 });
