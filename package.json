@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "cors": "^2.7.1",
+    "express": "^4.13.1",
     "gulp": "^3.9.0",
     "gulp-connect": "^2.2.0",
-    "gulp-sass": "^2.0.3"
+    "gulp-express": "^0.3.5",
+    "gulp-sass": "^2.0.3",
+    "request": "^2.58.0"
   },
   "devDependencies": {},
   "scripts": {

@@ -2,7 +2,8 @@
 
 var gulp = require('gulp'),
     connect = require('gulp-connect'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    server = require('gulp-express');
 
 gulp.task('sass', function () {
   gulp.src('./app/scss/*.scss')
@@ -30,5 +31,10 @@ gulp.task('html', function () {
 gulp.task('html:watch', function () {
   gulp.watch(['./app/*.html'], ['html']);
 });
+
+gulp.task('server', function () {
+  server.run(['app/proxy.js']);
+  gulp.watch(['app/proxy.js'], server.run);
+});
  
-gulp.task('default', ['sass', 'sass:watch', 'connect', 'html:watch']);
+gulp.task('default', ['sass', 'sass:watch', 'connect', 'html:watch', 'server']);
