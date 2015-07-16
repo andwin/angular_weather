@@ -1,11 +1,19 @@
-angular.module("myApp", []).directive('cityList', function() {
+'use strict;'
 
-
-//app.directive('cityList', function() {
+angular.module("myApp", []).directive('cityList', ['$http', function($http) {
   return {
     restrict: "E",
     transclude: true,
     replace: true,
-    templateUrl: 'views/directives/city_list.html'
+    templateUrl: 'views/directives/city_list.html',
+    link: function(scope) {
+      scope.change = function() {
+        var url = 'http://localhost:3000/city-list?q=' + scope.search;
+        $http.get(url).success(function(response) {
+          console.log(response);
+          scope.cityNames = response;
+        });
+      };
+    }
   };
-});
+}]);

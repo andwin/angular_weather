@@ -1,10 +1,11 @@
 <div>
-
 	City name <br />
-	<input type="text" ng-model="cityName" />
+	<input type="text" id="city-name" ng-model="search" ng-change="change()" ng-model-options='{ debounce: 500 }' />
 
-	{{cityName}}
-
-	<p>Nothing here {{'yet' + '!'}}</p>
+  <ul>
+    <li ng-repeat="cityName in cityNames">
+      <a href="{{cityName}}">{{cityName}}</a>
+    </li>
+  </ul>
 
 </div>
