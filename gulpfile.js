@@ -22,12 +22,12 @@ gulp.task('connect', function() {
     livereload: true
   });
 });
- 
+
 gulp.task('html', function () {
   gulp.src('./app/*.html')
     .pipe(connect.reload());
 });
- 
+
 gulp.task('html:watch', function () {
   gulp.watch(['./app/*.html'], ['html']);
 });
@@ -36,5 +36,5 @@ gulp.task('server', function () {
   server.run(['app/proxy.js']);
   gulp.watch(['app/proxy.js'], server.run);
 });
- 
+
 gulp.task('default', ['sass', 'sass:watch', 'connect', 'html:watch', 'server']);

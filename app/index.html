@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="bower/angular/angular.min.js">
     <link rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.css"></script>
     <link rel="stylesheet" href="css/main.css">
-
-    <script src="bower/angular/angular.js"></script>
   </head>
   <body>
 
@@ -45,21 +43,27 @@
     <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <city-list></city-list>       
+        <city-list></city-list>
       </div>
       <div class="col-md-8">
         <div class="jumbotron">
           <h1>Navbar example</h1>
           <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
         </div>
+        <div ng-view></div>
       </div>
     </div>
-      
+
+
     <script src="bower/jquery/dist/jquery.min.js"></script>
     <script src="bower/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <script src="js/app.js"></script>
-    <script src="js/directives/city_list.js"></script>
+    <script src="bower/angular/angular.js"></script>
+    <script src="bower/angular-route/angular-route.js"></script>
 
+    <script src="js/app.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/controllers/city.js"></script>
+    <script src="js/directives/city_list.js"></script>
   </body>
 </html>

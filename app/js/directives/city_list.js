@@ -1,6 +1,6 @@
 'use strict;'
 
-angular.module("myApp", []).directive('cityList', ['$http', function($http) {
+angular.module("myApp").directive('cityList', ['$http', function($http) {
   return {
     restrict: "E",
     transclude: true,
