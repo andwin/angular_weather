@@ -1,5 +1,5 @@
-<div>
-	City name <br />
+<div id="city-list">
+	<h2>City name</h2>
 	<input type="text" id="city-name" ng-model="search" ng-change="change()" ng-model-options='{ debounce: 500 }' />
 
   <ul>
@@ -7,5 +7,4 @@
       <a href="#/city/{{cityName}}">{{cityName}}</a>
     </li>
   </ul>
-
 </div>
