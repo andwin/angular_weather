@@ -24,12 +24,12 @@ gulp.task('connect', function() {
 });
 
 gulp.task('html', function () {
-  gulp.src('./app/*.html')
+  gulp.src('./app/**/*.html')
     .pipe(connect.reload());
 });
 
 gulp.task('html:watch', function () {
-  gulp.watch(['./app/*.html'], ['html']);
+  gulp.watch(['./app/**/*.html'], ['html']);
 });
 
 gulp.task('server', function () {
