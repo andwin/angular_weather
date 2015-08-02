@@ -7,6 +7,9 @@ angular.module('myApp')
         templateUrl: '/views/controllers/city/show.html',
         controller: 'CityController',
       })
+      .when('/', {
+        templateUrl: 'views/index.html'
+      })
       .when('/about', {
         templateUrl: 'views/about.html'
       })
