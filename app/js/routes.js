@@ -8,7 +8,7 @@ angular.module('myApp')
         controller: 'CityController',
       })
       .when('/about', {
-        template: 'about'
+        templateUrl: 'views/about.html'
       })
       .otherwise({
         redirectTo: '/'
