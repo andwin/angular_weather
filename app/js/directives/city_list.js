@@ -10,7 +10,6 @@ angular.module("myApp").directive('cityList', ['$http', function($http) {
       scope.change = function() {
         var url = 'http://localhost:3000/city-list?q=' + scope.search;
         $http.get(url).success(function(response) {
-          console.log(response);
           scope.cityNames = response;
         });
       };
