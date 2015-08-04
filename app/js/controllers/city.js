@@ -4,7 +4,7 @@ angular.module('myApp').controller('CityController', ['$scope', '$routeParams', 
   $scope.name = 'CityController';
   $scope.params = $routeParams;
 
-  var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + $routeParams.cityId;
+  var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + $routeParams.cityId + '&amp;units=metric';
   $http.get(url).success(function(response) {
     console.log(response);
     $scope.weatherData = response;
