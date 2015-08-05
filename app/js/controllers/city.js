@@ -8,6 +8,7 @@ angular.module('myApp').controller('CityController', ['$scope', '$routeParams', 
   $http.get(url).success(function(response) {
     console.log(response);
     $scope.weatherData = response;
+    $scope.weatherIcon = 'http://openweathermap.org/img/w/' + response.weather[0].icon + '.png';
 
     initializeMap(response.coord.lat, response.coord.lon);
   });
