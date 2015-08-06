@@ -6,7 +6,6 @@ angular.module('myApp').controller('CityController', ['$scope', '$routeParams', 
 
   var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + $routeParams.cityId + '&amp;units=metric';
   $http.get(url).success(function(response) {
-    console.log(response);
     $scope.weatherData = response;
     $scope.weatherIcon = 'http://openweathermap.org/img/w/' + response.weather[0].icon + '.png';
 
