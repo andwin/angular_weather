@@ -11,4 +11,10 @@
   <tr>
     <td>Wind</td><td>{{weatherData.wind.speed}} m/s {{weatherData.wind.deg}}&deg;</td>
   </tr>
+  <tr>
+    <td>Sunrise</td><td>{{formatTime(weatherData.sys.sunrise)}}</td>
+  </tr>
+  <tr>
+    <td>Sunset</td><td>{{formatTime(weatherData.sys.sunset)}}</td>
+  </tr>
 </table>
