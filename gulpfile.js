@@ -3,7 +3,8 @@
 var gulp = require('gulp'),
     connect = require('gulp-connect'),
     sass = require('gulp-sass'),
-    server = require('gulp-express');
+    server = require('gulp-express'),
+    eslint = require('gulp-eslint');
 
 gulp.task('sass', function () {
   gulp.src('./app/scss/*.scss')
@@ -35,6 +36,12 @@ gulp.task('html:watch', function () {
 gulp.task('server', function () {
   server.run(['app/proxy.js']);
   gulp.watch(['app/proxy.js'], server.run);
+});
+
+gulp.task('lint', function () {
+  return gulp.src(['app/**/*.js', '!app/bower/**/*'])
+            .pipe(eslint())
+            .pipe(eslint.format());
 });
 
 gulp.task('default', ['sass', 'sass:watch', 'connect', 'html:watch', 'server']);
