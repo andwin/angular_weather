@@ -2,7 +2,8 @@
     "rules": {
         "indent": [
             2,
-            2
+            2,
+            {"VariableDeclarator": 2}
         ],
         "quotes": [
             2,
@@ -15,7 +16,8 @@
         "semi": [
             2,
             "always"
-        ]
+        ],
+        "no-console": 0
     },
     "env": {
         "node": true,
