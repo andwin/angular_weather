@@ -1,4 +1,4 @@
-'use strict;'
+'use strict';
 
 angular.module('myApp')
   .config(['$routeProvider', function($routeProvider) {
@@ -8,12 +8,12 @@ angular.module('myApp')
         controller: 'CityController',
       })
       .when('/', {
-        templateUrl: 'views/index.html'
+        templateUrl: 'views/index.html',
       })
       .when('/about', {
-        templateUrl: 'views/about.html'
+        templateUrl: 'views/about.html',
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/',
       });
   }]);

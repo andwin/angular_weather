@@ -3,7 +3,7 @@ var express = require('express'),
     request = require('request');
 
 var app = express();
-app.use(cors())
+app.use(cors());
 
 app.get('/city-list', function(req, res) {
   var q = req.query && req.query.q;
@@ -12,6 +12,6 @@ app.get('/city-list', function(req, res) {
 });
 
 var port = 3000;
-var server = app.listen(port, function () {
+app.listen(port, function () {
   console.log('Listening to port %s', port);
 });

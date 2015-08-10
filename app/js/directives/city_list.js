@@ -1,8 +1,8 @@
-'use strict;'
+'use strict';
 
-angular.module("myApp").directive('cityList', ['$http', function($http) {
+angular.module('myApp').directive('cityList', ['$http', function($http) {
   return {
-    restrict: "E",
+    restrict: 'E',
     transclude: true,
     replace: true,
     templateUrl: 'views/directives/city_list.html',
@@ -13,6 +13,6 @@ angular.module("myApp").directive('cityList', ['$http', function($http) {
           scope.cityNames = response;
         });
       };
-    }
+    },
   };
 }]);

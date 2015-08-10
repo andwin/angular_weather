@@ -1,4 +1,4 @@
-'use strict;'
+'use strict';
 
 angular.module('myApp').controller('CityController', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
   $scope.name = 'CityController';
@@ -13,17 +13,17 @@ angular.module('myApp').controller('CityController', ['$scope', '$routeParams', 
   });
 
   var initializeMap = function(lat, lng) {
-    map = new google.maps.Map(document.getElementById('map-canvas'), {
+    new google.maps.Map(document.getElementById('map-canvas'), {
       zoom: 8,
-      center: {lat: lat, lng: lng}
+      center: {lat: lat, lng: lng},
     });
-  }
+  };
 
   $scope.formatTime = function(time) {
     var date = new Date(time * 1000);
     var hours = date.getHours();
-    var minutes = "0" + date.getMinutes();
-    var seconds = "0" + date.getSeconds();
+    var minutes = '0' + date.getMinutes();
+    var seconds = '0' + date.getSeconds();
 
     return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
   };
