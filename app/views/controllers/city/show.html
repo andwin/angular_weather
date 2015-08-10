@@ -18,9 +18,9 @@
     <td>Humidity</td><td>{{weatherData.main.humidity}}%</td>
   </tr>
   <tr>
-    <td>Sunrise</td><td>{{formatTime(weatherData.sys.sunrise)}}</td>
+    <td>Sunrise</td><td>{{weatherData.sys.sunrise * 1000 | date:'HH:mm:ss'}}</td>
   </tr>
   <tr>
-    <td>Sunset</td><td>{{formatTime(weatherData.sys.sunset)}}</td>
+    <td>Sunset</td><td>{{weatherData.sys.sunset * 1000 | date:'HH:mm:ss'}}</td>
   </tr>
 </table>
