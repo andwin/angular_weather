@@ -9,11 +9,18 @@ angular.module('myApp')
       })
       .when('/', {
         templateUrl: 'views/index.html',
+        pageTitle: 'Home',
       })
       .when('/about', {
         templateUrl: 'views/about.html',
+        pageTitle: 'About',
       })
       .otherwise({
         redirectTo: '/',
       });
+  }])
+  .run(['$rootScope', function($rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current) {
+      $rootScope.pageTitle = current.$$route.pageTitle;
+    });
   }]);
