@@ -1,8 +1,9 @@
 'use strict';
 
-angular.module('myApp').controller('CityController', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
+angular.module('myApp').controller('CityController', ['$scope', '$routeParams', '$http', '$rootScope', function($scope, $routeParams, $http, $rootScope) {
   $scope.name = 'CityController';
   $scope.params = $routeParams;
+  $rootScope.pageTitle = $routeParams.cityId;
 
   var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + $routeParams.cityId + '&amp;units=metric';
   $http.get(url).success(function(response) {
