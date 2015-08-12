@@ -2,9 +2,9 @@
 
 <div id="map-canvas"></div>
 
-<h2>Weather info</h2>
+<h2 ng-show="weatherData">Weather info</h2>
 
-<table class="table table-condensed">
+<table class="table table-condensed" ng-show="weatherData">
   <tr>
     <td>Temperature</td><td>{{weatherData.main.temp}} &deg;C</td>
   </tr>
