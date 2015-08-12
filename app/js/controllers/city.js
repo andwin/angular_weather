@@ -7,7 +7,14 @@ angular.module('myApp').controller('CityController', ['$scope', '$routeParams', 
 
   var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + $routeParams.cityId + '&units=metric';
   $http.get(url).success(function(response) {
+
+    if (response.cod == '404') {
+      $scope.params.cityId = 'City not found';
+      return;
+    }
+
     $scope.weatherData = response;
+
     $scope.weatherIcon = 'http://openweathermap.org/img/w/' + response.weather[0].icon + '.png';
 
     initializeMap(response.coord.lat, response.coord.lon);
